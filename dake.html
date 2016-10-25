@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fruits Lounge</title>
+        <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+        <script src="fruit.js"></script>
+        <script src="lounge.js"></script>
+        <script>
+            $('document').ready(function(){
+                var cb = function(index) {
+                    log('addUser')
+                    addUser()
+                }
+                var title = 'Halo, Please choose one of the fruits.'
+                var imgs = ['apple.png', 'banana.png', 'bananas.jpg',
+                               'grape.png', 'mango.jpg', 'peach.jpg',
+                                'pear.png', 'pineapple.png', 'strawberry.jpg',
+                                'watermelon.png', 'monkey.jpg', 'grape.jpg']
+
+                GuaActions(title, imgs, cb)
+            })
+        </script>
+        <style>
+            body {
+                margin: 0px;
+            }
+            h1 {
+                color: black;
+                background: #15c5ff;
+                padding: 29px;
+                margin-top: 0px;
+                text-align: center;
+                font-size: 72px;
+                font-family: cursive;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="welcome">
+            <h1>Welcome To Fruits' Lounge!</h1>
+        </div>
+    </body>
+</html>
