@@ -1,2 +1,3 @@
-# private-web
+# welcome to fruit lounge 
 一个留言的网站，打开后可以选择头像和昵称， 并且可以留言
+css自己做得，自我感觉还不错，毕竟不是学美术的，审美能力有限
