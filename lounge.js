@@ -206,8 +206,8 @@ var bindEvents = function() {
     bindEventAdd()
 }
 
-var __main = function(img='profilePic/bananas.jpg', name='BigBananas') {
-    init(img, name)
+var __main = function() {
+    init()
     bindEvents()
 }
 

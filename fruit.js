@@ -157,17 +157,30 @@ var initAlert = function(title, actions, callback) {
     insertContainer(title)
     $(".class-button-modal").attr("disabled", true)
     window.alertCallback = callback
-
     var t = templete(actions)
     $('.modal-message').append(t)
 }
 
-var GuaActions = function(title, actions, callback) {
+var bindEventKeyDown = function() {
+    $('.loungeUsernameNote').on('click', function(){
+        log('keydown')
+        $(this).remove()
+        $('.loungeUsername').focus()
+    })
+}
 
-    initAlert(title, actions, callback)
+var bindEventKeyUp = function() {
+    $('.loungeUsername').on('keyup',function(){
+        var len = $(this).val().length
+        if(len > 0) {
+            $(".class-button-modal").attr("disabled", false);
+        } else {
+            $(".class-button-modal").attr("disabled", true);
+        }
+    })
+}
 
-    bindEventMouseover()
-
+var bindEventClick = function() {
     $('.img-head').on('click', function(){
         log('click')
         $('.img-head').unbind()
@@ -177,22 +190,14 @@ var GuaActions = function(title, actions, callback) {
         $('.loungeUsername').fadeIn()
         $('.loungeUsernameNote').fadeIn()
         $('.modal-title').text('Now,Please input your name.')
-
-        $('.loungeUsernameNote').on('click', function(){
-            log('keydown')
-            $(this).remove()
-            $('.loungeUsername').focus()
-        })
-
-        $('.loungeUsername').on('keyup',function(){
-            var len = $(this).val().length
-            if(len > 0) {
-                $(".class-button-modal").attr("disabled", false);
-            } else {
-                $(".class-button-modal").attr("disabled", true);
-            }
-        })
+        bindEventKeyDown()
+        bindEventKeyUp()
     })
+}
 
+var djActions = function(title, actions, callback) {
+    initAlert(title, actions, callback)
+    bindEventMouseover()
+    bindEventClick()
     bindEventOk()
 }

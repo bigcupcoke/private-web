@@ -8,7 +8,7 @@
         <script src="lounge.js"></script>
         <script>
             $('document').ready(function(){
-                var cb = function(index) {
+                var callback = function() {
                     log('addUser')
                     addUser()
                 }
@@ -18,7 +18,7 @@
                                 'pear.png', 'pineapple.png', 'strawberry.jpg',
                                 'watermelon.png', 'monkey.jpg', 'grape.jpg']
 
-                GuaActions(title, imgs, cb)
+                djActions(title, imgs, callback)
             })
         </script>
         <style>
